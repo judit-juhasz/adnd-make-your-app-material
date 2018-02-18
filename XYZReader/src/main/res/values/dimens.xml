@@ -9,6 +9,14 @@
     <dimen name="fab_press_translation_z">6dp</dimen>
     <dimen name="fab_margin">24dp</dimen>
 
+    <dimen name="view_height">122dp</dimen>
+    <dimen name="maxwidth_linearlayout_elevation">2dp</dimen>
+    <dimen name="fab_size">56dp</dimen>
+    <item name="title_lineSpacingMultiplier" type="dimen" format="float">0.9</item>
+
+    <dimen name="image_height">100dp</dimen>
+    <dimen name="image_width">100dp</dimen>
+
 
     <!-- list_item_article.xml -->
     <dimen name="margin_cardview">8dp</dimen>

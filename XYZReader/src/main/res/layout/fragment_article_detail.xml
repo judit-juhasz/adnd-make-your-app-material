@@ -21,13 +21,13 @@
                 <!--suppress AndroidLintContentDescription -->
                 <ImageView
                     android:id="@+id/photo"
-                    android:layout_width="100dp"
-                    android:layout_height="100dp"
+                    android:layout_width="@dimen/image_width"
+                    android:layout_height="@dimen/image_height"
                      />
 
                 <View
                     android:layout_width="match_parent"
-                    android:layout_height="112dp"
+                    android:layout_height="@dimen/view_height"
                     android:background="@drawable/photo_background_protection" />
 
             </FrameLayout>
@@ -39,7 +39,7 @@
                 android:layout_gravity="center_horizontal"
                 android:maxWidth="@dimen/detail_card_max_width"
                 android:background="#fff"
-                android:elevation="2dp"
+                android:elevation="@dimen/maxwidth_linearlayout_elevation"
                 android:layout_marginTop="@dimen/detail_card_top_margin">
 
                 <LinearLayout
@@ -65,7 +65,7 @@
                         android:textColor="#fff"
                         android:textStyle="bold"
                         android:textSize="@dimen/detail_title_text_size"
-                        android:lineSpacingMultiplier="0.9" />
+                        android:lineSpacingMultiplier="@dimen/title_lineSpacingMultiplier" />
 
                     <TextView
                         android:id="@+id/article_byline"
@@ -98,8 +98,8 @@
         android:layout_gravity="bottom|end"
         android:layout_marginRight="@dimen/fab_margin"
         android:layout_marginBottom="@dimen/fab_margin"
-        android:layout_width="56dp"
-        android:layout_height="56dp"
+        android:layout_width="@dimen/fab_size"
+        android:layout_height="@dimen/fab_size"
         android:src="@drawable/ic_share"
         android:elevation="@dimen/fab_elevation"
         android:contentDescription="@string/action_share" />
