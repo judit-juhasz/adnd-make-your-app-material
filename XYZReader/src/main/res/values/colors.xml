@@ -26,5 +26,9 @@
     <color name="colorPrimaryText">#de000000</color>
     <color name="colorSecondaryText">#8a000000</color>
 
+    <color name="color_white">#fff</color>
+    <color name="color_grey">#333</color>
+    <color name="color_author">#8fff</color>
+
 
 </resources>
