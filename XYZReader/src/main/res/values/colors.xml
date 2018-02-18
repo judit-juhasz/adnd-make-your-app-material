@@ -22,4 +22,9 @@
     <color name="colorPrimary">#2196f3</color>
     <color name="colorPrimaryDark">#0069c0</color>
     <color name="colorAccent">#d81b60</color>
+
+    <color name="colorPrimaryText">#de000000</color>
+    <color name="colorSecondaryText">#8a000000</color>
+
+
 </resources>
