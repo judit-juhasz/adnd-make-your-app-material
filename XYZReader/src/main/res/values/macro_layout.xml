@@ -4,6 +4,11 @@
     <dimen name="list_toolbar_side_margin">0dp</dimen>
     <integer name="list_column_count">2</integer>
     <dimen name="margin_normal">16dp</dimen>
+    <dimen name="appbar_layout_height">80dp</dimen>
+    <dimen name="frame_layout_elevation">8dp</dimen>
+    <dimen name="list_top_padding">96dp</dimen>
+    <dimen name="list_bottom_padding">24dp</dimen>
+
 
     <!-- detail -->
     <bool name="detail_is_card">false</bool>
