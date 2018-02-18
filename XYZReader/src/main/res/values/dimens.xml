@@ -11,6 +11,7 @@
 
     <!-- list_item_article.xml -->
     <dimen name="margin_cardview">8dp</dimen>
+    <dimen name="cardview_corner_radius">4dp</dimen>
     <dimen name="placeholder_image_height">100dp</dimen>
     <dimen name="placeholder_image_width">100dp</dimen>
     <dimen name="padding_normal_article_title">16dp</dimen>

@@ -1,13 +1,18 @@
 <android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_marginLeft="@dimen/margin_cardview"
     android:layout_marginRight="@dimen/margin_cardview"
     android:layout_marginTop="@dimen/margin_cardview"
     android:layout_marginBottom="@dimen/margin_cardview"
     android:clickable="true"
     android:focusable="true"
-    android:foreground="?selectableItemBackground">
+    cardPreventCornerOverlap="false"
+    app:cardCornerRadius="@dimen/cardview_corner_radius"
+    android:elevation="@dimen/cardview_default_elevation"
+    android:foreground="?selectableItemBackground"
+    app:cardUseCompatPadding="true">
 
     <LinearLayout
         android:layout_width="match_parent"
