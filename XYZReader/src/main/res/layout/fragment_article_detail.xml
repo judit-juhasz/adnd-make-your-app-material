@@ -89,16 +89,16 @@
         </FrameLayout>
     </com.example.xyzreader.ui.ObservableScrollView>
 
-    <ImageButton android:id="@+id/share_fab"
-        android:stateListAnimator="@anim/fab_state_list_anim"
-        android:background="@drawable/add_fab_background"
-        android:layout_gravity="bottom|end"
-        android:layout_marginRight="@dimen/fab_margin"
-        android:layout_marginBottom="@dimen/fab_margin"
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/share_fab"
         android:layout_width="@dimen/fab_size"
         android:layout_height="@dimen/fab_size"
+        android:contentDescription="@string/action_share"
         android:src="@drawable/ic_share"
-        android:elevation="@dimen/fab_elevation"
-        android:contentDescription="@string/action_share" />
+        app:elevation="@dimen/fab_elevation"
+        android:translationZ="@dimen/fab_press_translation_z"
+        android:layout_marginRight="@dimen/fab_margin"
+        android:layout_marginBottom="@dimen/fab_margin"
+        android:layout_gravity="bottom|end" />
 
 </com.example.xyzreader.ui.DrawInsetsFrameLayout>
