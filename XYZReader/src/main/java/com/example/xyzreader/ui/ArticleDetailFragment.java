@@ -13,10 +13,12 @@ import java.util.Date;
 import java.util.GregorianCalendar;
 
 import android.os.Bundle;
+import android.support.design.widget.AppBarLayout;
 import android.support.design.widget.CollapsingToolbarLayout;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.ShareCompat;
 import android.support.v7.graphics.Palette;
+import android.support.v7.widget.Toolbar;
 import android.text.Html;
 import android.text.format.DateUtils;
 import android.text.method.LinkMovementMethod;
@@ -51,8 +53,9 @@ public class ArticleDetailFragment extends Fragment implements
     private ImageView mPhotoView;
 
     private CollapsingToolbarLayout mCollapsingToolbarLayout;
+    private Toolbar mToolbar;
 
-    private FloatingActionButton shareFloatingActionButton;
+    private FloatingActionButton mShareFloatingActionButton;
 
     private SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.sss");
     // Use default locale format
@@ -107,10 +110,35 @@ public class ArticleDetailFragment extends Fragment implements
         mRootView = inflater.inflate(R.layout.fragment_article_detail, container, false);
 
         mPhotoView = (ImageView) mRootView.findViewById(R.id.photo);
-        mCollapsingToolbarLayout = (CollapsingToolbarLayout) mRootView.findViewById(R.id.layout_collapsing);
 
-        shareFloatingActionButton = (FloatingActionButton) mRootView.findViewById(R.id.share_fab);
-        shareFloatingActionButton.setOnClickListener(new View.OnClickListener() {
+        mCollapsingToolbarLayout = (CollapsingToolbarLayout) mRootView.findViewById(R.id.layout_collapsing);
+        mCollapsingToolbarLayout.setTitleEnabled(false);
+
+        mToolbar = (Toolbar) mRootView.findViewById(R.id.fragment_toolbar);
+        mToolbar.setNavigationOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                getActivity().finish();
+            }
+        });
+        getActivityCast().setSupportActionBar(mToolbar);
+        getActivityCast().getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
+        final AppBarLayout appBarLayout = (AppBarLayout) mRootView.findViewById(R.id.main_appbar);
+        appBarLayout.addOnOffsetChangedListener(new AppBarLayout.OnOffsetChangedListener() {
+            @Override
+            public void onOffsetChanged(AppBarLayout appBarLayout, int verticalOffset) {
+                final boolean collapsed =
+                        (0 == Math.abs(verticalOffset)-appBarLayout.getTotalScrollRange());
+                final boolean titleEnabled = collapsed && null != mCursor;
+                final String title =
+                        titleEnabled ? mCursor.getString(ArticleLoader.Query.TITLE) : "";
+                mToolbar.setTitle(title);
+            }
+        });
+
+        mShareFloatingActionButton = (FloatingActionButton) mRootView.findViewById(R.id.share_fab);
+        mShareFloatingActionButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 startActivity(Intent.createChooser(ShareCompat.IntentBuilder.from(getActivity())
@@ -150,7 +178,9 @@ public class ArticleDetailFragment extends Fragment implements
             mRootView.setAlpha(0);
             mRootView.setVisibility(View.VISIBLE);
             mRootView.animate().alpha(1);
-            titleView.setText(mCursor.getString(ArticleLoader.Query.TITLE));
+            final String title = mCursor.getString(ArticleLoader.Query.TITLE);
+            titleView.setText(title);
+            mToolbar.setTitle(title);
             Date publishedDate = parsePublishedDate();
             if (!publishedDate.before(START_OF_EPOCH.getTime())) {
                 bylineView.setText(Html.fromHtml(
@@ -198,6 +228,7 @@ public class ArticleDetailFragment extends Fragment implements
             titleView.setText("N/A");
             bylineView.setText("N/A" );
             bodyView.setText("N/A");
+            mToolbar.setTitle("");
         }
     }
 

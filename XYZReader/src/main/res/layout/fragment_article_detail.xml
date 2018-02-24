@@ -5,7 +5,7 @@
     android:layout_height="match_parent">
 
     <android.support.design.widget.AppBarLayout
-        android:id="@+id/main.appbar"
+        android:id="@+id/main_appbar"
         android:layout_width="match_parent"
         android:layout_height="296dp"
         android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
