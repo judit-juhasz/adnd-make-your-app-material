@@ -116,14 +116,14 @@ public class ArticleDetailFragment extends Fragment implements
         mCollapsingToolbarLayout.setTitleEnabled(false);
 
         mToolbar = (Toolbar) mRootView.findViewById(R.id.fragment_toolbar);
+        getActivityCast().setSupportActionBar(mToolbar);
+        getActivityCast().getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         mToolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 getActivity().finish();
             }
         });
-        getActivityCast().setSupportActionBar(mToolbar);
-        getActivityCast().getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         final AppBarLayout appBarLayout = (AppBarLayout) mRootView.findViewById(R.id.main_appbar);
         appBarLayout.addOnOffsetChangedListener(new AppBarLayout.OnOffsetChangedListener() {
