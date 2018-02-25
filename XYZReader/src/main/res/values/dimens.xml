@@ -1,33 +1,34 @@
 <resources>
 
     <!-- detail -->
-    <dimen name="detail_title_text_size">32sp</dimen>
-    <dimen name="detail_body_text_size">22sp</dimen>
     <item name="detail_body_line_spacing_multiplier" format="float" type="fraction">1.25</item>
+    <item name="title_lineSpacingMultiplier" type="dimen" format="float">0.9</item>
 
     <dimen name="fab_elevation">2dp</dimen>
     <dimen name="fab_press_translation_z">6dp</dimen>
     <dimen name="fab_margin">24dp</dimen>
-
-    <dimen name="view_height">122dp</dimen>
-    <dimen name="maxwidth_linearlayout_elevation">2dp</dimen>
     <dimen name="fab_size">56dp</dimen>
-    <item name="title_lineSpacingMultiplier" type="dimen" format="float">0.9</item>
 
-    <dimen name="image_height">100dp</dimen>
-    <dimen name="image_width">100dp</dimen>
+    <dimen name="view_height">144dp</dimen>
+    <dimen name="maxwidth_linearlayout_elevation">2dp</dimen>
+    <dimen name="fragment_appbar_layout_height">296dp</dimen>
+    <dimen name="expandedTitleMarginStart">48dp</dimen>
+    <dimen name="expandedTitleMarginEnd">64dp</dimen>
+    <dimen name="zero_layout_height">0dp</dimen>
+    <integer name="weight_value_one">1</integer>
 
 
     <!-- list_item_article.xml -->
     <dimen name="margin_cardview">8dp</dimen>
     <dimen name="cardview_corner_radius">4dp</dimen>
-    <dimen name="placeholder_image_height">100dp</dimen>
-    <dimen name="placeholder_image_width">100dp</dimen>
+
     <dimen name="padding_normal_article_title">16dp</dimen>
     <dimen name="padding_small_article_title">4dp</dimen>
     <dimen name="padding_article_subtitle">16dp</dimen>
 
     <integer name="max_line_article_title">4</integer>
     <integer name="max_line_article_subtitle">2</integer>
+
+    <dimen name="placeholder_image_height">100dp</dimen>
 
 </resources>
