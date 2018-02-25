@@ -20,6 +20,7 @@ import android.support.v4.app.ShareCompat;
 import android.support.v7.graphics.Palette;
 import android.support.v7.widget.Toolbar;
 import android.text.Html;
+import android.text.Spanned;
 import android.text.format.DateUtils;
 import android.text.method.LinkMovementMethod;
 import android.util.Log;
@@ -199,7 +200,14 @@ public class ArticleDetailFragment extends Fragment implements
 
             }
 
-            bodyView.setText(Html.fromHtml(mCursor.getString(ArticleLoader.Query.BODY).replaceAll("(\r\n|\n)", "<br />")));
+            final String rawContent = mCursor.getString(ArticleLoader.Query.BODY);
+            // Normalize line ending
+            String content =
+                    rawContent
+                            .replaceAll("(\r\n\r\n)", "<br/>")
+                            .replaceAll("(\r\n)", " ")
+                            .replaceAll("  ", " ");
+            bodyView.setText(Html.fromHtml(content), TextView.BufferType.SPANNABLE);
 
             ImageLoaderHelper.getInstance(getActivity()).getImageLoader()
                     .get(mCursor.getString(ArticleLoader.Query.PHOTO_URL), new ImageLoader.ImageListener() {
