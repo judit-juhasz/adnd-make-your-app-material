@@ -131,4 +131,10 @@
         android:layout_marginBottom="@dimen/fab_margin"
         android:layout_gravity="bottom|end" />
 
+    <ProgressBar
+        android:id="@+id/progress_bar"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_gravity="center"/>
+
 </android.support.design.widget.CoordinatorLayout>

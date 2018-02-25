@@ -17,6 +17,7 @@ import android.support.design.widget.AppBarLayout;
 import android.support.design.widget.CollapsingToolbarLayout;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.ShareCompat;
+import android.support.v4.widget.NestedScrollView;
 import android.support.v7.graphics.Palette;
 import android.support.v7.widget.Toolbar;
 import android.text.Html;
@@ -27,6 +28,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import com.android.volley.VolleyError;
@@ -47,15 +49,16 @@ public class ArticleDetailFragment extends Fragment implements
 
     private Cursor mCursor;
     private long mItemId;
-    private View mRootView;
     private int mMutedColor = 0xFF333333;
 
+    private View mRootView;
     private ImageView mPhotoView;
-
+    private AppBarLayout mAppBar;
     private CollapsingToolbarLayout mCollapsingToolbarLayout;
     private Toolbar mToolbar;
-
+    private NestedScrollView mScrollView;
     private FloatingActionButton mShareFloatingActionButton;
+    private ProgressBar mProgressBar;
 
     private SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.sss");
     // Use default locale format
@@ -110,6 +113,9 @@ public class ArticleDetailFragment extends Fragment implements
         mRootView = inflater.inflate(R.layout.fragment_article_detail, container, false);
 
         mPhotoView = (ImageView) mRootView.findViewById(R.id.photo);
+        mAppBar = (AppBarLayout) mRootView.findViewById(R.id.main_appbar);
+        mProgressBar = (ProgressBar) mRootView.findViewById(R.id.progress_bar);
+        mScrollView = (NestedScrollView) mRootView.findViewById(R.id.scrollview);
 
         mCollapsingToolbarLayout = (CollapsingToolbarLayout) mRootView.findViewById(R.id.layout_collapsing);
         mCollapsingToolbarLayout.setTitleEnabled(false);
@@ -124,8 +130,7 @@ public class ArticleDetailFragment extends Fragment implements
             }
         });
 
-        final AppBarLayout appBarLayout = (AppBarLayout) mRootView.findViewById(R.id.main_appbar);
-        appBarLayout.addOnOffsetChangedListener(new AppBarLayout.OnOffsetChangedListener() {
+        mAppBar.addOnOffsetChangedListener(new AppBarLayout.OnOffsetChangedListener() {
             @Override
             public void onOffsetChanged(AppBarLayout appBarLayout, int verticalOffset) {
                 final boolean collapsed =
@@ -176,7 +181,10 @@ public class ArticleDetailFragment extends Fragment implements
 
         if (mCursor != null) {
             mRootView.setAlpha(0);
-            mRootView.setVisibility(View.VISIBLE);
+            mAppBar.setVisibility(View.VISIBLE);
+            mScrollView.setVisibility(View.VISIBLE);
+            mShareFloatingActionButton.setVisibility(View.VISIBLE);
+            mProgressBar.setVisibility(View.GONE);
             mRootView.animate().alpha(1);
             final String title = mCursor.getString(ArticleLoader.Query.TITLE);
             titleView.setText(title);
@@ -231,7 +239,10 @@ public class ArticleDetailFragment extends Fragment implements
                         }
                     });
         } else {
-            mRootView.setVisibility(View.GONE);
+            mAppBar.setVisibility(View.GONE);
+            mScrollView.setVisibility(View.GONE);
+            mShareFloatingActionButton.setVisibility(View.GONE);
+            mProgressBar.setVisibility(View.VISIBLE);
             titleView.setText("N/A");
             bylineView.setText("N/A" );
             bodyView.setText("N/A");
