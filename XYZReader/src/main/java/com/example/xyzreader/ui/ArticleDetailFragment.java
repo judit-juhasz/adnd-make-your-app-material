@@ -181,10 +181,6 @@ public class ArticleDetailFragment extends Fragment implements
 
         if (mCursor != null) {
             mRootView.setAlpha(0);
-            mAppBar.setVisibility(View.VISIBLE);
-            mScrollView.setVisibility(View.VISIBLE);
-            mShareFloatingActionButton.setVisibility(View.VISIBLE);
-            mProgressBar.setVisibility(View.GONE);
             mRootView.animate().alpha(1);
             final String title = mCursor.getString(ArticleLoader.Query.TITLE);
             titleView.setText(title);
@@ -238,6 +234,10 @@ public class ArticleDetailFragment extends Fragment implements
 
                         }
                     });
+            mAppBar.setVisibility(View.VISIBLE);
+            mScrollView.setVisibility(View.VISIBLE);
+            mShareFloatingActionButton.setVisibility(View.VISIBLE);
+            mProgressBar.setVisibility(View.GONE);
         } else {
             mAppBar.setVisibility(View.GONE);
             mScrollView.setVisibility(View.GONE);
