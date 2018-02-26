@@ -6,80 +6,51 @@
 
     <android.support.design.widget.AppBarLayout
         android:id="@+id/main_appbar"
-        android:layout_width="match_parent"
-        android:layout_height="@dimen/fragment_appbar_layout_height"
+        style="@style/FragmentAppBarLayout"
         android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
 
         <android.support.design.widget.CollapsingToolbarLayout
             android:id="@+id/layout_collapsing"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            style="@style/CollapsingToolbar"
             app:layout_scrollFlags="scroll|exitUntilCollapsed"
             app:expandedTitleMarginStart="@dimen/expandedTitleMarginStart"
             app:expandedTitleMarginEnd="@dimen/expandedTitleMarginEnd">
 
 
             <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="vertical">
+                style="@style/ContainerLinearLayout">
 
                 <FrameLayout
                     android:id="@+id/photo_container"
-                    android:layout_width="match_parent"
-                    android:layout_height="@dimen/zero_layout_height"
-                    android:layout_weight="@integer/weight_value_one"
-                    android:background="@color/photo_placeholder">
-                    <!--suppress AndroidLintContentDescription -->
+                    style="@style/PhotoContainer">
+
                     <ImageView
                         android:id="@+id/photo"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:scaleType="centerCrop" />
+                        style="@style/FragmentImage" />
 
                     <View
-                        android:layout_width="match_parent"
-                        android:layout_height="@dimen/view_height"
-                        android:background="@drawable/photo_background_protection" />
+                        style="@style/FragmentImageBackground" />
 
                 </FrameLayout>
 
                 <LinearLayout
                     android:id="@+id/meta_bar"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:background="@color/color_grey"
-                    android:layout_gravity="bottom"
-                    android:orientation="vertical"
-                    android:paddingLeft="@dimen/detail_inner_horiz_margin"
-                    android:paddingRight="@dimen/detail_inner_horiz_margin"
-                    android:paddingTop="@dimen/detail_metabar_vert_padding"
-                    android:paddingBottom="@dimen/detail_metabar_vert_padding">
+                    style="@style/MetaBar">
 
                     <TextView
                         android:id="@+id/article_title"
-                        android:textAppearance="@style/TextAppearance.AppCompat.Large"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:paddingBottom="@dimen/detail_metabar_title_bottom_padding"
-                        android:textColor="@color/color_white"
-                        android:textStyle="bold"
-                        android:lineSpacingMultiplier="@dimen/title_lineSpacingMultiplier" />
+                        style="@style/FragmentArticleTitle" />
 
                     <TextView
                         android:id="@+id/article_byline"
-                        android:textAppearance="@style/TextAppearance.AppCompat.Small"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:textColor="@color/color_white" />
+                        style="@style/FragmentArticleSubtitle" />
                 </LinearLayout>
 
             </LinearLayout>
 
             <android.support.v7.widget.Toolbar
                 android:id="@+id/fragment_toolbar"
-                android:layout_width="match_parent"
-                android:layout_height="?attr/actionBarSize"
+                style="@style/FragmentToolbar"
                 app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
                 app:layout_collapseMode="pin"/>
 
@@ -89,31 +60,15 @@
 
     <android.support.v4.widget.NestedScrollView
         android:id="@+id/scrollview"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        style="@style/ScrollView"
         app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
         <com.example.xyzreader.ui.MaxWidthLinearLayout
-            android:orientation="vertical"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:maxWidth="@dimen/detail_card_max_width"
-            android:background="@color/color_white"
-            android:elevation="@dimen/maxwidth_linearlayout_elevation">
+            style="@style/ArticleBodyContainer">
 
             <TextView
                 android:id="@+id/article_body"
-                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="@dimen/detail_inner_horiz_margin"
-                android:layout_marginRight="@dimen/detail_inner_horiz_margin"
-                android:paddingBottom="@dimen/detail_body_bottom_margin"
-                android:textColor="@color/colorPrimaryText"
-                android:textColorLink="@color/colorAccent"
-                android:lineSpacingMultiplier="@fraction/detail_body_line_spacing_multiplier"
-                android:paddingTop="@dimen/detail_body_top_margin" />
+                style="@style/ArticleBody" />
 
         </com.example.xyzreader.ui.MaxWidthLinearLayout>
 
@@ -121,20 +76,12 @@
 
     <android.support.design.widget.FloatingActionButton
         android:id="@+id/share_fab"
-        android:layout_width="@dimen/fab_size"
-        android:layout_height="@dimen/fab_size"
-        android:contentDescription="@string/action_share"
         android:src="@drawable/ic_share"
         app:elevation="@dimen/fab_elevation"
-        android:translationZ="@dimen/fab_press_translation_z"
-        android:layout_marginRight="@dimen/fab_margin"
-        android:layout_marginBottom="@dimen/fab_margin"
-        android:layout_gravity="bottom|end" />
+        style="@style/Fab"/>
 
     <ProgressBar
         android:id="@+id/progress_bar"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
-        android:layout_gravity="center"/>
+        style="@style/ProgressBar"/>
 
 </android.support.design.widget.CoordinatorLayout>

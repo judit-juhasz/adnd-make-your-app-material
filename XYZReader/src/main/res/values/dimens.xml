@@ -17,6 +17,8 @@
     <dimen name="zero_layout_height">0dp</dimen>
     <integer name="weight_value_one">1</integer>
 
+    <dimen name="progressbar_size">40dp</dimen>
+
 
     <!-- list_item_article.xml -->
     <dimen name="margin_cardview">8dp</dimen>
