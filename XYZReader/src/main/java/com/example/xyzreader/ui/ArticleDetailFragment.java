@@ -147,8 +147,8 @@ public class ArticleDetailFragment extends Fragment implements
             @Override
             public void onClick(View view) {
                 startActivity(Intent.createChooser(ShareCompat.IntentBuilder.from(getActivity())
-                        .setType("text/plain")
-                        .setText("Some sample text")
+                        .setType(getString(R.string.text_type))
+                        .setText(getString(R.string.share_set_text))
                         .getIntent(), getString(R.string.action_share)));
             }
         });
@@ -243,9 +243,9 @@ public class ArticleDetailFragment extends Fragment implements
             mScrollView.setVisibility(View.GONE);
             mShareFloatingActionButton.setVisibility(View.GONE);
             mProgressBar.setVisibility(View.VISIBLE);
-            titleView.setText("N/A");
-            bylineView.setText("N/A" );
-            bodyView.setText("N/A");
+            titleView.setText(getString(R.string.default_text));
+            bylineView.setText(getString(R.string.default_text));
+            bodyView.setText(getString(R.string.default_text));
             mToolbar.setTitle("");
         }
     }
