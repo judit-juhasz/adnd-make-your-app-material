@@ -17,7 +17,6 @@
 
 <resources>
     <color name="photo_placeholder">#ccc</color>
-    <color name="ltgray">#ffe0e0e0</color>
 
     <color name="colorPrimary">#2196f3</color>
     <color name="colorPrimaryDark">#0069c0</color>
@@ -28,7 +27,4 @@
 
     <color name="color_white">#fff</color>
     <color name="color_grey">#333</color>
-    <color name="color_author">#8fff</color>
-
-
 </resources>
