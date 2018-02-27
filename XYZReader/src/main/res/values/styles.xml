@@ -55,16 +55,10 @@
 
     <style name="ArticleListToolbarContainer">
         <item name="android:layout_width">match_parent</item>
-        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_height">@dimen/frame_layout_height</item>
         <item name="android:background">?colorPrimary</item>
         <item name="android:elevation">@dimen/frame_layout_elevation</item>
         <item name="android:layout_marginRight">@dimen/list_toolbar_side_margin</item>
-    </style>
-
-    <style name="ArticleListAppBarLayout">
-        <item name="android:layout_width">match_parent</item>
-        <item name="android:layout_height">@dimen/appbar_layout_height</item>
-        <item name="android:background">?colorPrimary</item>
     </style>
 
     <style name="SwipeReFreshLayout">
