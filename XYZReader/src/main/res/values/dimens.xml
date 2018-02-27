@@ -4,7 +4,7 @@
     <item name="detail_body_line_spacing_multiplier" format="float" type="fraction">1.25</item>
     <item name="title_lineSpacingMultiplier" type="dimen" format="float">0.9</item>
 
-    <dimen name="fab_elevation">2dp</dimen>
+    <dimen name="fab_elevation">6dp</dimen>
     <dimen name="fab_press_translation_z">6dp</dimen>
     <dimen name="fab_margin">24dp</dimen>
     <dimen name="fab_size">56dp</dimen>
@@ -18,6 +18,7 @@
     <integer name="weight_value_one">1</integer>
 
     <dimen name="progressbar_size">40dp</dimen>
+    <dimen name="appbar_elevation">4dp</dimen>
 
     <!-- list_item_article.xml -->
     <dimen name="margin_cardview">8dp</dimen>
