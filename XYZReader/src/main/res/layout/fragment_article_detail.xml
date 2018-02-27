@@ -16,7 +16,6 @@
             app:expandedTitleMarginStart="@dimen/expandedTitleMarginStart"
             app:expandedTitleMarginEnd="@dimen/expandedTitleMarginEnd">
 
-
             <LinearLayout
                 style="@style/ContainerLinearLayout">
 
