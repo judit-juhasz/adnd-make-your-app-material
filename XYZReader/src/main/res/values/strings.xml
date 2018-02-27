@@ -8,4 +8,6 @@
     <string name="share_set_text">I hope you enjoy the reading</string>
     <string name="default_text">N/A</string>
 
+    <string name="message_internet_connection">Connect to the Internet and swipe to refresh</string>
+
 </resources>

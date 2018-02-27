@@ -76,7 +76,7 @@ public class ArticleListActivity extends AppCompatActivity implements
 
         mRecyclerView = (RecyclerView) findViewById(R.id.recycler_view);
         mNoInternetEmptyListSnackbar =
-                Snackbar.make(mRootView, "Connect to the Internet and swipe to refresh",
+                Snackbar.make(mRootView, getString(R.string.message_internet_connection),
                         Snackbar.LENGTH_INDEFINITE);
         getLoaderManager().initLoader(0, null, this);
 
